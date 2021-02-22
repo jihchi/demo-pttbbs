@@ -1,7 +1,7 @@
-import ExamplesRes from "src/Examples.js";
+import TrendingBoardsRes from "src/TrendingBoards.js";
 
 // This can be re-exported as is (no Fast-Refresh issues)
-export { getServerSideProps } from "src/Examples.js";
+export { getServerSideProps } from "src/TrendingBoards.js";
 
 // Note:
 // We need to wrap the make call with
@@ -11,5 +11,5 @@ export { getServerSideProps } from "src/Examples.js";
 // If you don't do this, your Fast-Refresh will
 // not work!
 export default function Examples(props) {
-  return <ExamplesRes {...props}/>;
+  return <TrendingBoardsRes {...props}/>;
 }
