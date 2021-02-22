@@ -1,1 +1,1 @@
-export { default } from 'src/PageIndex.js';
+export { default, getServerSideProps } from 'src/PageIndex.js';

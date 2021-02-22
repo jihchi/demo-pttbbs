@@ -1,2 +1,2 @@
 @react.component
-let make: unit => React.element
+let make: (~data: array<Types.Post.t>) => React.element

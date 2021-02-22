@@ -21,7 +21,11 @@
   "warnings": {
     "error": "+101+8"
   },
-  "bsc-flags": ["-bs-super-errors", "-bs-g"],
+  "bsc-flags": [
+    "-bs-super-errors",
+    "-bs-g",
+    "-open Belt"
+  ],
   "gentypeconfig": {
     "language": "untyped",
     "shims": [],
