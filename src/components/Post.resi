@@ -1,2 +1,2 @@
 @react.component
-let make: (~board: string, ~slug: string) => React.element
+let make: (~data: Types.Post.t, ~comments: array<Types.Comment.t>, unit) => React.element

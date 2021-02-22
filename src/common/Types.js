@@ -3,14 +3,20 @@
 
 var Sort = {};
 
+var Board = {};
+
 var Post = {};
 
-var Board = {};
+var Content = {};
+
+var $$Comment = {};
 
 export {
   Sort ,
-  Post ,
   Board ,
+  Post ,
+  Content ,
+  $$Comment ,
   
 }
 /* No side effect */

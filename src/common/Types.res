@@ -4,6 +4,15 @@ module Sort = {
     | Desc
 }
 
+module Board = {
+  type t = {
+    bid: string,
+    brdname: string,
+    title: string,
+    class: string,
+  }
+}
+
 module Post = {
   type t = {
     bid: string,
@@ -11,14 +20,32 @@ module Post = {
     owner: string,
     title: string,
     class: string,
+    brdname: string,
   }
 }
 
-module Board = {
+module Content = {
+  type color = {
+    foreground: int,
+    background: int,
+    blink: bool,
+    highlight: bool,
+    reset: bool,
+  }
+
+  type t = {
+    text: string,
+    color0: color,
+    color1: color,
+  }
+}
+
+module Comment = {
   type t = {
     bid: string,
-    brdname: string,
-    title: string,
-    class: string,
+    aid: string,
+    cid: string,
+    owner: string,
+    content: array<array<Content.t>>,
   }
 }
