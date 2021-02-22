@@ -143,6 +143,11 @@
   resolved "https://registry.yarnpkg.com/@rescript/react/-/react-0.10.1.tgz#ddce66ba664a104354d559c350ca4ebf17ab5a26"
   integrity sha512-5eIfGnV1yhjv03ktK6fQ6iEfsZKXKXXrq5hx4+ngEY4R/RU8o/oH9ne375m9RJMugV/jsE8hMoEeSSg2YQy3Ag==
 
+"@ryyppy/rescript-promise@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@ryyppy/rescript-promise/-/rescript-promise-1.0.0.tgz#cf47768d8bde149078b64cb1acd512086f9531ea"
+  integrity sha512-9CPUy2ZQ6qG8746Fo2OfR/WO9MoDrAWcg1rHixtif/7zkPqzoZobn3qxu3DpvTQg63ZVIbz45BNJpI8ECE38UA==
+
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
@@ -495,6 +500,11 @@ browserslist@^4.16.1:
     electron-to-chromium "^1.3.649"
     escalade "^3.1.1"
     node-releases "^1.1.70"
+
+bs-fetch@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/bs-fetch/-/bs-fetch-0.6.2.tgz#37d982e9f79b9bc44c23e87ae78ccbee1f869adf"
+  integrity sha512-VXEjp8kY3vHPckaoy3d96Bx0KYjJAPLNISBwfpwMN26K6DtuZYwI2HKhx7zeHBajz1bRArfx7O8OOLcdtujMvg==
 
 bs-platform@9.0.1:
   version "9.0.1"
