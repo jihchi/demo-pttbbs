@@ -2,12 +2,22 @@
 
 import * as Post from "./components/Post.js";
 import * as React from "react";
+import * as Js_dict from "bs-platform/lib/es6/js_dict.js";
+import * as Router from "next/router";
 
-function $$default(props) {
-  return React.createElement(Post.make, {
-              board: props.board,
-              slug: props.slug
-            });
+function $$default(param) {
+  var router = Router.useRouter();
+  var query = router.query;
+  var board = Js_dict.get(query, "board");
+  var slug = Js_dict.get(query, "slug");
+  if (board !== undefined && slug !== undefined) {
+    return React.createElement(Post.make, {
+                board: board,
+                slug: slug
+              });
+  } else {
+    return null;
+  }
 }
 
 export {

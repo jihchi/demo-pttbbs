@@ -6,7 +6,7 @@
     "@rescript/react": "^0.10.1",
     "gentype": "^3.41.0",
     "next": "^10.0.4",
-    "next-transpile-modules": "^4.1.0",
+    "next-transpile-modules": "^4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "request": "^2.88.0"

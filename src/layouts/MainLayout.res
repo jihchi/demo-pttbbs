@@ -14,6 +14,7 @@ module Navigation = {
       <div className="flex w-2/3 justify-end">
         <Link href="/"> <a className="px-3"> {React.string("Home")} </a> </Link>
         <Link href="/trending/boards"> <a className="px-3"> {React.string("Trending Boards")} </a> </Link>
+        <Link href="/post/10_WhoAmI/WEFSDHASD"> <a className="px-3"> {React.string("Test Post")} </a> </Link>
         <a
           className="px-3 font-bold"
           target="_blank"

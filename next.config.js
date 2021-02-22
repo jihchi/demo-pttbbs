@@ -1,12 +1,11 @@
+const withTM = require('next-transpile-modules');
 const bsconfig = require('./bsconfig.json');
-
-const transpileModules = ["bs-platform"].concat(bsconfig["bs-dependencies"]);
-const withTM = require("next-transpile-modules")(transpileModules);
+const transpileModules = ['bs-platform'].concat(bsconfig['bs-dependencies']);
 
 const config = {
-  target: "serverless",
-  pageExtensions: ["jsx", "js"],
-  transpileModules: ["bs-platform"].concat(bsconfig["bs-dependencies"]),
+  target: 'serverless',
+  pageExtensions: ['jsx', 'js'],
+  transpileModules,
   env: {
     ENV: process.env.NODE_ENV,
   },
@@ -16,11 +15,11 @@ const config = {
       // We shim fs for things like the blog slugs component
       // where we need fs access in the server-side part
       config.node = {
-        fs: 'empty'
-      }
+        fs: 'empty',
+      };
     }
-    return config
-  }
+    return config;
+  },
 };
 
-module.exports = withTM(config);
+module.exports = withTM(transpileModules)(config);

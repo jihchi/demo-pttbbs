@@ -25,6 +25,11 @@ function MainLayout$Navigation(Props) {
                       children: React.createElement("a", {
                             className: "px-3"
                           }, "Trending Boards")
+                    }), React.createElement(Link, {
+                      href: "/post/10_WhoAmI/WEFSDHASD",
+                      children: React.createElement("a", {
+                            className: "px-3"
+                          }, "Test Post")
                     }), React.createElement("a", {
                       className: "px-3 font-bold",
                       href: "https://github.com/Ptt-official-app/demo-pttbbs",
