@@ -14,3 +14,7 @@ let getHotPosts = (~limit=3, ~sort=Types.Sort.Desc, ()) => {
     ),
   )
 }
+
+let getHotBoards = () => {
+  fetch(makeEndpoint("/api/boards/popular"))
+}

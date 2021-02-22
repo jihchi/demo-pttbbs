@@ -60,9 +60,14 @@ function getHotPosts(limitOpt, sortOpt, param) {
                     }), makeEndpoint("/api/articles/popular"), limit, sort === /* Desc */1 ? "true" : "false"));
 }
 
+function getHotBoards(param) {
+  return fetch(makeEndpoint("/api/boards/popular"));
+}
+
 export {
   makeEndpoint ,
   getHotPosts ,
+  getHotBoards ,
   
 }
 /* No side effect */

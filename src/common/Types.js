@@ -5,9 +5,12 @@ var Sort = {};
 
 var Post = {};
 
+var Board = {};
+
 export {
   Sort ,
   Post ,
+  Board ,
   
 }
 /* No side effect */

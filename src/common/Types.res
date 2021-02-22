@@ -8,12 +8,17 @@ module Post = {
   type t = {
     bid: string,
     aid: string,
-    deleted: bool,
-    create_time: int,
-    modified: int,
     owner: string,
     title: string,
     class: string,
-    read: bool,
+  }
+}
+
+module Board = {
+  type t = {
+    bid: string,
+    brdname: string,
+    title: string,
+    class: string,
   }
 }
