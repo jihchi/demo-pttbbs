@@ -22,7 +22,9 @@ module GetServerSideProps = {
   }
 
   // The definition of a getServerSideProps function
-  type t<'props, 'params, 'previewData> = context<'props, 'params, 'previewData> => Js.Promise.t<{"props": 'props}>
+  type t<'props, 'params, 'previewData> = context<'props, 'params, 'previewData> => Js.Promise.t<{
+    "props": 'props,
+  }>
 }
 
 module GetStaticProps = {
@@ -102,6 +104,7 @@ module Router = {
     events: Events.t,
     pathname: string,
     query: Js.Dict.t<string>,
+    isFallback: bool,
   }
 
   type pathObj = {
@@ -137,7 +140,7 @@ module Dynamic = {
     loading: unit => React.element,
   }
 
-  /** Test **/
+  /* * Test * */
   @module("next/dynamic")
   external dynamic: (unit => Js.Promise.t<'a>, options) => 'a = "default"
 

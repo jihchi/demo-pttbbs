@@ -1,6 +1,5 @@
-type props = {post: Types.Post.t, comments: array<Types.Comment.t>}
-type params = {board: string, slug: string}
-
+type props
+type params
 let default: props => React.element
-
-let getServerSideProps: Next.GetServerSideProps.t<props, params, _>
+let getStaticPaths: Next.GetStaticPaths.t<params>
+let getStaticProps: Next.GetStaticProps.t<props, params, _>

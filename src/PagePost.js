@@ -6,15 +6,18 @@ import * as React from "react";
 import * as $$Promise from "@ryyppy/rescript-promise/src/Promise.js";
 import * as Js_option from "bs-platform/lib/es6/js_option.js";
 import * as Belt_Result from "bs-platform/lib/es6/belt_Result.js";
+import * as Router from "next/router";
 
 function $$default(props) {
+  var router = Router.useRouter();
   return React.createElement(Post.make, {
+              isFallback: router.isFallback,
               data: props.post,
               comments: props.comments
             });
 }
 
-function getServerSideProps(ctx) {
+function getStaticProps(ctx) {
   var params = ctx.params;
   return $$Promise.$$catch(Promise.all([
                         Api.getPost(params.board, params.slug),
@@ -60,10 +63,18 @@ function getServerSideProps(ctx) {
             });
 }
 
+function getStaticPaths(_params) {
+  return Promise.resolve({
+              paths: [],
+              fallback: true
+            });
+}
+
 export {
   $$default ,
   $$default as default,
-  getServerSideProps ,
+  getStaticPaths ,
+  getStaticProps ,
   
 }
 /* Post Not a pure module */

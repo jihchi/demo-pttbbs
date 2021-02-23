@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from 'src/PagePost.js';
+export { default, getStaticProps, getStaticPaths } from 'src/PagePost.js';

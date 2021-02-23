@@ -1,13 +1,15 @@
+open Promise
+
 type props = {post: Types.Post.t, comments: array<Types.Comment.t>}
 type params = {board: string, slug: string}
 
 let default = props => {
-  <Post data=props.post comments=props.comments />
+  let router = Next.Router.useRouter()
+  <Post isFallback=router.isFallback data=props.post comments=props.comments />
 }
 
-let getServerSideProps: Next.GetServerSideProps.t<props, params, _> = ctx => {
-  open Promise
-
+let getStaticProps: Next.GetStaticProps.t<props, params, _> = ctx => {
+  open Next.GetStaticProps
   let {params} = ctx
 
   Promise.all2((
@@ -48,4 +50,10 @@ let getServerSideProps: Next.GetServerSideProps.t<props, params, _> = ctx => {
       },
     })
   })
+}
+
+let getStaticPaths: Next.GetStaticPaths.t<params> = _params => {
+  open Next.GetStaticPaths
+
+  resolve({paths: [], fallback: true})
 }
