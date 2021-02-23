@@ -14,11 +14,13 @@ let getServerSideProps: Next.GetServerSideProps.t<props, params, _> = ctx => {
     Api.getPost(~boardId=params.board, ~postId=params.slug),
     Api.getComment(~boardId=params.board, ~postId=params.slug),
   ))
-  ->then(((resPost, resComment)) => {
-    Promise.all2((resPost->Fetch.Response.json, resComment->Fetch.Response.json))
+  ->then(res => {
+    Promise.all2((res->fst->Fetch.Response.json, res->snd->Fetch.Response.json))
   })
-  ->then(((jsonPost, jsonComment)) => {
-    Result.Ok((jsonPost->%raw(`(json) => json`), jsonComment->%raw(`(json) => json["list"]`)))->resolve
+  ->then(json => {
+    resolve(
+      Result.Ok((json->fst->%raw(`(json) => json`), json->snd->%raw(`(json) => json["list"]`))),
+    )
   })
   ->catch(e => {
     switch e {
@@ -27,18 +29,22 @@ let getServerSideProps: Next.GetServerSideProps.t<props, params, _> = ctx => {
     }->Belt.Result.Error
   })
   ->then(result => {
-    let emptyPost = {
-      Types.Post.bid: "",
-      aid: "",
-      owner: "",
-      title: "",
-      class: "",
-      brdname: "",
-    }
+    let result = result->Belt.Result.getWithDefault((
+      {
+        Types.Post.bid: "",
+        aid: "",
+        owner: "",
+        title: "",
+        class: "",
+        brdname: "",
+      },
+      [],
+    ))
+
     resolve({
       "props": {
-        post: result->Belt.Result.getWithDefault((emptyPost, []))->fst,
-        comments: result->Belt.Result.getWithDefault((emptyPost, []))->snd,
+        post: result->fst,
+        comments: result->snd,
       },
     })
   })

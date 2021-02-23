@@ -19,17 +19,17 @@ function getServerSideProps(ctx) {
   return $$Promise.$$catch(Promise.all([
                         Api.getPost(params.board, params.slug),
                         Api.getComment(params.board, params.slug)
-                      ]).then(function (param) {
+                      ]).then(function (res) {
                       return Promise.all([
-                                  param[0].json(),
-                                  param[1].json()
+                                  res[0].json(),
+                                  res[1].json()
                                 ]);
-                    }).then(function (param) {
+                    }).then(function (json) {
                     return Promise.resolve({
                                 TAG: 0,
                                 _0: [
-                                  ((json) => json)(param[0]),
-                                  ((json) => json["list"])(param[1])
+                                  ((json) => json)(json[0]),
+                                  ((json) => json["list"])(json[1])
                                 ],
                                 [Symbol.for("name")]: "Ok"
                               });
@@ -40,24 +40,21 @@ function getServerSideProps(ctx) {
                           [Symbol.for("name")]: "Error"
                         };
                 })).then(function (result) {
-              var emptyPost = {
-                bid: "",
-                aid: "",
-                owner: "",
-                title: "",
-                class: "",
-                brdname: ""
-              };
+              var result$1 = Belt_Result.getWithDefault(result, [
+                    {
+                      bid: "",
+                      aid: "",
+                      owner: "",
+                      title: "",
+                      class: "",
+                      brdname: ""
+                    },
+                    []
+                  ]);
               return Promise.resolve({
                           props: {
-                            post: Belt_Result.getWithDefault(result, [
-                                    emptyPost,
-                                    []
-                                  ])[0],
-                            comments: Belt_Result.getWithDefault(result, [
-                                    emptyPost,
-                                    []
-                                  ])[1]
+                            post: result$1[0],
+                            comments: result$1[1]
                           }
                         });
             });
