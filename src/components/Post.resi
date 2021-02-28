@@ -1,7 +1,7 @@
 @react.component
 let make: (
   ~isFallback: bool,
-  ~data: Types.Post.t,
-  ~comments: array<Types.Comment.t>,
+  ~post: Result.t<Types.Post.t, string>,
+  ~comments: Result.t<array<Types.Comment.t>, string>,
   unit,
 ) => React.element

@@ -1,11 +1,14 @@
 open Promise
 
-type props = {post: Types.Post.t, comments: array<Types.Comment.t>}
+type props = {
+  post: Result.t<Types.Post.t, string>,
+  comments: Result.t<array<Types.Comment.t>, string>,
+}
 type params = {board: string, slug: string}
 
 let default = props => {
   let router = Next.Router.useRouter()
-  <Post isFallback=router.isFallback data=props.post comments=props.comments />
+  <Post isFallback=router.isFallback post=props.post comments=props.comments />
 }
 
 let getStaticProps: Next.GetStaticProps.t<props, params, _> = ctx => {
@@ -32,23 +35,11 @@ let getStaticProps: Next.GetStaticProps.t<props, params, _> = ctx => {
     ->Belt.Result.Error
     ->resolve
   })
-  ->then(result => {
-    let result = result->Belt.Result.getWithDefault((
-      {
-        Types.Post.bid: "",
-        aid: "",
-        owner: "",
-        title: "",
-        class: "",
-        brdname: "",
-      },
-      [],
-    ))
-
+  ->then(results => {
     resolve({
       "props": {
-        post: result->fst,
-        comments: result->snd,
+        post: results->Result.map(fst),
+        comments: results->Result.map(snd),
       },
     })
   })

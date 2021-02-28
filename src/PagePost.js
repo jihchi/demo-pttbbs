@@ -12,7 +12,7 @@ function $$default(props) {
   var router = Router.useRouter();
   return React.createElement(Post.make, {
               isFallback: router.isFallback,
-              data: props.post,
+              post: props.post,
               comments: props.comments
             });
 }
@@ -42,22 +42,15 @@ function getStaticProps(ctx) {
                               _0: e.RE_EXN_ID === $$Promise.JsError ? Js_option.getWithDefault("", e._1.message) : "Unexpected error occurred",
                               [Symbol.for("name")]: "Error"
                             });
-                })).then(function (result) {
-              var result$1 = Belt_Result.getWithDefault(result, [
-                    {
-                      bid: "",
-                      aid: "",
-                      owner: "",
-                      title: "",
-                      class: "",
-                      brdname: ""
-                    },
-                    []
-                  ]);
+                })).then(function (results) {
               return Promise.resolve({
                           props: {
-                            post: result$1[0],
-                            comments: result$1[1]
+                            post: Belt_Result.map(results, (function (prim) {
+                                    return prim[0];
+                                  })),
+                            comments: Belt_Result.map(results, (function (prim) {
+                                    return prim[1];
+                                  }))
                           }
                         });
             });
