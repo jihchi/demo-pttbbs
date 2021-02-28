@@ -143,10 +143,10 @@
   resolved "https://registry.yarnpkg.com/@rescript/react/-/react-0.10.1.tgz#ddce66ba664a104354d559c350ca4ebf17ab5a26"
   integrity sha512-5eIfGnV1yhjv03ktK6fQ6iEfsZKXKXXrq5hx4+ngEY4R/RU8o/oH9ne375m9RJMugV/jsE8hMoEeSSg2YQy3Ag==
 
-"@ryyppy/rescript-promise@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ryyppy/rescript-promise/-/rescript-promise-1.0.0.tgz#cf47768d8bde149078b64cb1acd512086f9531ea"
-  integrity sha512-9CPUy2ZQ6qG8746Fo2OfR/WO9MoDrAWcg1rHixtif/7zkPqzoZobn3qxu3DpvTQg63ZVIbz45BNJpI8ECE38UA==
+"@ryyppy/rescript-promise@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ryyppy/rescript-promise/-/rescript-promise-2.0.0.tgz#e0f31e8d5d85a822485113d34d3e5ee77c7e8523"
+  integrity sha512-Nyej9ESV32rG+fxDlK+BtmSiN4mAQ6vCYxYNuU7LqGXKUmr9XiiEbLYEtQXKg3KDpMfKZTwbyjyj2LOiCHrAmQ==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"

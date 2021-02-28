@@ -28,7 +28,9 @@ let getStaticProps: Next.GetStaticProps.t<props, params, _> = ctx => {
     switch e {
     | JsError(err) => err->Js.Exn.message->Js.Option.getWithDefault("", _)
     | _ => "Unexpected error occurred"
-    }->Belt.Result.Error
+    }
+    ->Belt.Result.Error
+    ->resolve
   })
   ->then(result => {
     let result = result->Belt.Result.getWithDefault((

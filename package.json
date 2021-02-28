@@ -23,7 +23,7 @@
     "res:start": "bsb -make-world -w"
   },
   "devDependencies": {
-    "@ryyppy/rescript-promise": "^1.0.0",
+    "@ryyppy/rescript-promise": "^2.0.0",
     "autoprefixer": "^10.1.0",
     "bs-fetch": "^0.6.2",
     "bs-platform": "9.0.1",

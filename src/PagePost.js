@@ -37,11 +37,11 @@ function getStaticProps(ctx) {
                                 [Symbol.for("name")]: "Ok"
                               });
                   }), (function (e) {
-                  return {
-                          TAG: 1,
-                          _0: e.RE_EXN_ID === $$Promise.JsError ? Js_option.getWithDefault("", e._1.message) : "Unexpected error occurred",
-                          [Symbol.for("name")]: "Error"
-                        };
+                  return Promise.resolve({
+                              TAG: 1,
+                              _0: e.RE_EXN_ID === $$Promise.JsError ? Js_option.getWithDefault("", e._1.message) : "Unexpected error occurred",
+                              [Symbol.for("name")]: "Error"
+                            });
                 })).then(function (result) {
               var result$1 = Belt_Result.getWithDefault(result, [
                     {
