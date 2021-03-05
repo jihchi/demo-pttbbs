@@ -1,7 +1,0 @@
----
-extends:
-  - react-app
-rules:
-  import/no-anonymous-default-export: 0
-  react-hooks/exhaustive-deps: 0
-  jsx-a11y/no-redundant-roles: 0
