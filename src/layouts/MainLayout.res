@@ -41,9 +41,9 @@ module Navigation = {
 let make = (~children) => {
   <>
     <Meta />
-    <div className="flex lg:justify-center">
-      <div className="max-w-5xl w-full lg:w-3/4 text-gray-900 font-base">
-        <Navigation /> <main className="mt-4 mx-4"> children </main>
+    <div className={tw(["flex", "lg:justify-center"])}>
+      <div className={tw(["max-w-5xl", "w-full", "lg:w-3/4", "text-gray-900", "text-base"])}>
+        <Navigation /> <main className={tw(["mt-4", "mx-4"])}> children </main>
       </div>
     </div>
   </>

@@ -37,11 +37,11 @@ function MainLayout$Navigation(Props) {
 function MainLayout(Props) {
   var children = Props.children;
   return React.createElement(React.Fragment, undefined, React.createElement(Meta.make, {}), React.createElement("div", {
-                  className: "flex lg:justify-center"
+                  className: Twind.tw("flex", "lg:justify-center")
                 }, React.createElement("div", {
-                      className: "max-w-5xl w-full lg:w-3/4 text-gray-900 font-base"
+                      className: Twind.tw("max-w-5xl", "w-full", "lg:w-3/4", "text-gray-900", "text-base")
                     }, React.createElement(MainLayout$Navigation, {}), React.createElement("main", {
-                          className: "mt-4 mx-4"
+                          className: Twind.tw("mt-4", "mx-4")
                         }, children))));
 }
 
