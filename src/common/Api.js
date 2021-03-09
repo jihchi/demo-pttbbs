@@ -59,6 +59,53 @@ function getHotBoards(param) {
                     }), Config.getApiUrl(undefined)));
 }
 
+function getPosts(boardId, limitOpt, sortOpt, param) {
+  var limit = limitOpt !== undefined ? limitOpt : 10;
+  var sort = sortOpt !== undefined ? sortOpt : /* Desc */1;
+  return fetch(Curry._4(Printf.sprintf({
+                      _0: {
+                        TAG: 2,
+                        _0: /* No_padding */0,
+                        _1: {
+                          TAG: 11,
+                          _0: "/api/board/",
+                          _1: {
+                            TAG: 2,
+                            _0: /* No_padding */0,
+                            _1: {
+                              TAG: 11,
+                              _0: "/articles?limit=",
+                              _1: {
+                                TAG: 4,
+                                _0: /* Int_d */0,
+                                _1: /* No_padding */0,
+                                _2: /* No_precision */0,
+                                _3: {
+                                  TAG: 11,
+                                  _0: "&desc=",
+                                  _1: {
+                                    TAG: 2,
+                                    _0: /* No_padding */0,
+                                    _1: /* End_of_format */0,
+                                    [Symbol.for("name")]: "String"
+                                  },
+                                  [Symbol.for("name")]: "String_literal"
+                                },
+                                [Symbol.for("name")]: "Int"
+                              },
+                              [Symbol.for("name")]: "String_literal"
+                            },
+                            [Symbol.for("name")]: "String"
+                          },
+                          [Symbol.for("name")]: "String_literal"
+                        },
+                        [Symbol.for("name")]: "String"
+                      },
+                      _1: "%s/api/board/%s/articles?limit=%d&desc=%s",
+                      [Symbol.for("name")]: "Format"
+                    }), Config.getApiUrl(undefined), boardId, limit, sort === /* Desc */1 ? "true" : "false"));
+}
+
 function getPost(boardId, postId) {
   return fetch(Curry._3(Printf.sprintf({
                       _0: {
@@ -133,6 +180,7 @@ function getComment(boardId, postId) {
 export {
   getHotPosts ,
   getHotBoards ,
+  getPosts ,
   getPost ,
   getComment ,
   

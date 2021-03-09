@@ -5,45 +5,46 @@ import * as React from "react";
 import * as Twind from "twind";
 import * as Printf from "bs-platform/lib/es6/printf.js";
 import Link from "next/link";
+import * as Belt_Array from "bs-platform/lib/es6/belt_Array.js";
 
 function TrendingPosts(Props) {
   var data = Props.data;
   return React.createElement("div", undefined, React.createElement("ul", {
                   className: Twind.tw("list-disc")
-                }, data.map(function (post) {
-                      var key = post.bid + "/" + post.aid;
-                      var href = Curry._2(Printf.sprintf({
-                                _0: {
-                                  TAG: 11,
-                                  _0: "/post/",
-                                  _1: {
-                                    TAG: 2,
-                                    _0: /* No_padding */0,
+                }, Belt_Array.map(data, (function (post) {
+                        var key = post.bid + "/" + post.aid;
+                        var href = Curry._2(Printf.sprintf({
+                                  _0: {
+                                    TAG: 11,
+                                    _0: "/post/",
                                     _1: {
-                                      TAG: 12,
-                                      _0: /* '/' */47,
+                                      TAG: 2,
+                                      _0: /* No_padding */0,
                                       _1: {
-                                        TAG: 2,
-                                        _0: /* No_padding */0,
-                                        _1: /* End_of_format */0,
-                                        [Symbol.for("name")]: "String"
+                                        TAG: 12,
+                                        _0: /* '/' */47,
+                                        _1: {
+                                          TAG: 2,
+                                          _0: /* No_padding */0,
+                                          _1: /* End_of_format */0,
+                                          [Symbol.for("name")]: "String"
+                                        },
+                                        [Symbol.for("name")]: "Char_literal"
                                       },
-                                      [Symbol.for("name")]: "Char_literal"
+                                      [Symbol.for("name")]: "String"
                                     },
-                                    [Symbol.for("name")]: "String"
+                                    [Symbol.for("name")]: "String_literal"
                                   },
-                                  [Symbol.for("name")]: "String_literal"
-                                },
-                                _1: "/post/%s/%s",
-                                [Symbol.for("name")]: "Format"
-                              }), post.bid, post.aid);
-                      return React.createElement("li", {
-                                  key: key
-                                }, React.createElement(Link, {
-                                      href: href,
-                                      children: post.title
-                                    }));
-                    })));
+                                  _1: "/post/%s/%s",
+                                  [Symbol.for("name")]: "Format"
+                                }), post.bid, post.aid);
+                        return React.createElement("li", {
+                                    key: key
+                                  }, React.createElement(Link, {
+                                        href: href,
+                                        children: post.title
+                                      }));
+                      }))));
 }
 
 var make = TrendingPosts;

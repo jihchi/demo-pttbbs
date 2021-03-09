@@ -6,7 +6,7 @@ let make = (~data: array<Types.Post.t>) => {
   <div>
     <ul className={tw(["list-disc"])}>
       {data
-      ->Js.Array2.map(post => {
+      ->Array.map(post => {
         let key = post.bid ++ "/" ++ post.aid
         let href = Printf.sprintf("/post/%s/%s", post.bid, post.aid)
         <li key> <Link href={href}> {post.title->React.string} </Link> </li>
