@@ -16,7 +16,7 @@
   "dependencies": {
     "@rescript/react": "^0.10.1",
     "gentype": "^3.41.0",
-    "next": "^10.0.4",
+    "next": "^10.0.8",
     "next-transpile-modules": "^4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -24,11 +24,11 @@
   },
   "devDependencies": {
     "@ryyppy/rescript-promise": "^2.0.0",
-    "autoprefixer": "^10.1.0",
+    "autoprefixer": "^10.2.5",
     "bs-fetch": "^0.6.2",
     "bs-platform": "9.0.1",
     "cssnano": "^4.1.10",
-    "postcss": "^8.2.1",
+    "postcss": "^8.2.7",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.2"
   }
