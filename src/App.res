@@ -16,7 +16,7 @@ let default = (props: props): React.element => {
   | _ =>
     <MainLayout>
       <div className={tw(["flex", "justify-center"])}>
-        <div className={tw(["max-w-705", "w-full"])}> content </div>
+        <div className={tw(["w-full"])}> content </div>
       </div>
     </MainLayout>
   }

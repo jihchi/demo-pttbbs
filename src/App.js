@@ -14,7 +14,7 @@ function $$default(props) {
               children: React.createElement("div", {
                     className: Twind.tw("flex", "justify-center")
                   }, React.createElement("div", {
-                        className: Twind.tw("max-w-705", "w-full")
+                        className: Twind.tw("w-full")
                       }, content))
             });
 }
