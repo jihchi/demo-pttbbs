@@ -2,13 +2,14 @@
 
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
+import * as Twind from "twind";
 import * as Printf from "bs-platform/lib/es6/printf.js";
 import Link from "next/link";
 
 function TrendingBoards(Props) {
   var data = Props.data;
   return React.createElement("div", undefined, React.createElement("ul", {
-                  className: "list-disc"
+                  className: Twind.tw("list-disc")
                 }, data.map(function (board) {
                       var key = board.bid;
                       var href = Curry._1(Printf.sprintf({

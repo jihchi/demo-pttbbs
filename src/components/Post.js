@@ -2,6 +2,7 @@
 
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
+import * as Twind from "twind";
 import * as Printf from "bs-platform/lib/es6/printf.js";
 
 function Post(Props) {
@@ -21,7 +22,7 @@ function Post(Props) {
     }
     var tmp$2;
     tmp$2 = comments.TAG === /* Ok */0 ? React.createElement("ul", {
-            className: "list-decimal"
+            className: Twind.tw("list-decimal")
           }, comments._0.map(function (comment) {
                 return React.createElement("li", {
                             key: comment.cid

@@ -2,32 +2,33 @@
 
 import * as Meta from "../components/Meta.js";
 import * as React from "react";
+import * as Twind from "twind";
 import Link from "next/link";
 
 function MainLayout$Navigation(Props) {
   return React.createElement("nav", {
-              className: "p-2 h-12 flex border-b border-gray-200 justify-between items-center text-sm"
+              className: Twind.tw("p-2", "h-12", "flex", "border-b", "border-gray-200", "justify-between", "items-center", "text-sm")
             }, React.createElement(Link, {
                   href: "/",
                   children: React.createElement("a", {
-                        className: "flex items-center w-1/3"
+                        className: Twind.tw("flex", "items-center", "w-1/3")
                       }, React.createElement("span", {
-                            className: "text-xl ml-2 align-middle font-semibold"
+                            className: Twind.tw("text-xl", "ml-2", "align-middle", "font-semibold")
                           }, "PTT"))
                 }), React.createElement("div", {
-                  className: "flex w-2/3 justify-end"
+                  className: Twind.tw("flex", "w-2/3", "justify-end")
                 }, React.createElement(Link, {
                       href: "/",
                       children: React.createElement("a", {
-                            className: "px-3"
+                            className: Twind.tw("px-3")
                           }, "Home")
                     }), React.createElement(Link, {
                       href: "/trending/boards",
                       children: React.createElement("a", {
-                            className: "px-3"
+                            className: Twind.tw("px-3")
                           }, "Trending Boards")
                     }), React.createElement("a", {
-                      className: "px-3 font-bold",
+                      className: Twind.tw("px-3", "font-bold"),
                       href: "https://github.com/Ptt-official-app/demo-pttbbs",
                       target: "_blank"
                     }, "Github")));

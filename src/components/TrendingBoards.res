@@ -1,9 +1,10 @@
+open Twind
 module Link = Next.Link
 
 @react.component
 let make = (~data: array<Types.Board.t>) => {
   <div>
-    <ul className="list-disc">
+    <ul className={tw(["list-disc"])}>
       {data
       ->Js.Array2.map(board => {
         let key = board.bid

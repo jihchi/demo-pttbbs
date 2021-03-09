@@ -1,3 +1,5 @@
+open Twind
+
 @react.component
 let make = (
   ~isFallback: bool,
@@ -18,7 +20,7 @@ let make = (
           }}
           {switch comments {
           | Ok(ok) =>
-            <ul className="list-decimal">
+            <ul className={tw(["list-decimal"])}>
               {ok
               ->Js.Array2.map(comment => {
                 <li key=comment.cid>
